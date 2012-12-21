@@ -1,6 +1,6 @@
 class Array
   def binary_find(num = nil)
-    if length_even
+    if length_even?
       self << nil
     end
     if self[mid_index] == num
@@ -22,7 +22,7 @@ class Array
     self.length/2
   end
   
-  def length_even
+  def length_even?
     self.length % 2 == 0 ? true : false
   end
 end
