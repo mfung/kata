@@ -1,11 +1,10 @@
 class Array
   def binary_find(num = nil)
-    if length_even?
-      self << nil
-    end
-    if self[mid_index] == num
+    even_length_add_nil
+    
+    if mid_value == num
       return true
-    elsif self.length == 1 || self[mid_index] == nil
+    elsif self.length == 1 || mid_value == nil
       return false
     else
       mid_value > num ? self[0...mid_index].binary_find(num) : self[(mid_index+1)..self.length].binary_find(num)
@@ -14,8 +13,14 @@ class Array
   
   private
   
+  def even_length_add_nil
+    if length_even?
+      self << nil
+    end
+  end
+  
   def mid_value
-    self[self.length/2]
+    self[mid_index]
   end
   
   def mid_index
