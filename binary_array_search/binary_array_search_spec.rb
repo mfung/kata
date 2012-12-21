@@ -25,6 +25,12 @@ describe 'Binary Array Search' do
   end
   context '2 item array' do
     Given(:array) { [1,2] }
+    context 'make sure even array adds nil to end point to ensure midpoint' do
+      Given(:search_number) { 3 }
+      When(:result) { array.binary_find(search_number) }
+      Then { expect(array.count).to eql 3 }
+      And { expect(array.last).to eql nil }
+    end
     context 'with no match' do
       Given(:search_number) { 3 }
       When(:result) { array.binary_find(search_number) }
