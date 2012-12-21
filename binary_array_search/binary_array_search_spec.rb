@@ -43,22 +43,22 @@ describe 'Binary Array Search' do
   end
   context '3 item array' do
     Given(:array) { [1,2,3] }
-    context '3 item array with no match' do
+    context 'with no match' do
       Given(:search_number) { 4 }
       When(:result) { array.binary_find(search_number) }
       Then { expect(result).to eql false }
     end
-    context '3 item array with match in middle' do
+    context 'with match in middle' do
       Given(:search_number) { 2 }
       When(:result) { array.binary_find(search_number) }
       Then { expect(result).to eql true }
     end
-    context '3 item array with match in right' do
+    context 'ith match in right' do
       Given(:search_number) { 3 }
       When(:result) { array.binary_find(search_number) }
       Then { expect(result).to eql true }
     end
-    context '3 item array with match in left' do
+    context 'with match in left' do
       Given(:search_number) { 1 }
       When(:result) { array.binary_find(search_number) }
       Then { expect(result).to eql true }
@@ -66,17 +66,17 @@ describe 'Binary Array Search' do
   end
   context 'Complex array' do
     Given(:array) { [1,2,3,5,6,7,9,10,11,23,34,56] }
-    context 'Complex array with no match' do
+    context 'with no match' do
       Given(:search_number) { 76 }
       When(:result) { array.binary_find(search_number) }
       Then { expect(result).to eql false }
     end
-    context 'Complex array with match on left' do
+    context 'with match on left' do
       Given(:search_number) { 3 }
       When(:result) { array.binary_find(search_number) }
       Then { expect(result).to eql true }
     end
-    context 'Complex array with match on right' do
+    context 'with match on right' do
       Given(:search_number) { 34 }
       When(:result) { array.binary_find(search_number) }
       Then { expect(result).to eql true }
